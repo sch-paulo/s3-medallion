@@ -15,7 +15,7 @@ def clean_silver_layer(df_source):
     df['phone'] = df['phone'].str.replace(r'^(\d{3})(\d{3})(\d{4})$', r'(\1) \2-\3', regex=True)
     
     df['age'] = pd.to_numeric(df['age'], errors='coerce').fillna(-1).astype(int)
-    df = df[df['age'].between(0, 110)]
+    df = df[df['age'].between(18, 75)]
 
     df['salary'] = df['salary'].clip(lower=0, upper=200000)
 

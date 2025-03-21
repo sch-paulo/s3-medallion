@@ -1,2 +1,4 @@
 .qodo
 .venv/
+.vscode/
+.env
