@@ -2,6 +2,16 @@ import os
 import pandas as pd
 
 def clean_silver_layer(df_source):
+    """
+    Clean and transform raw data into a standardized silver layer dataset.
+    
+    Parameters:
+    df_source (DataFrame): Raw source data with quality issues
+    
+    Returns:
+    DataFrame: Cleaned DataFrame with standardized formats, removed duplicates,
+    filtered invalid values, and normalized fields
+   """
     df = df_source.copy()
     
     df = df.dropna(subset=['name'])

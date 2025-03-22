@@ -1,11 +1,7 @@
-import os
-from typing import List
-import boto3
-from dotenv import load_dotenv
+from src.data_generator import generate_raw_data
+from src.processor import clean_silver_layer
+from src.aggregators import create_gold_layer
 
-from data_generation.generator import generate_raw_data
-from data_processing.cleaner import clean_silver_layer
-from data_modeling.aggregators import create_gold_layer
 # Generate and clean data
 bronze_df = generate_raw_data(5000, 100)
 silver_df = clean_silver_layer(bronze_df)

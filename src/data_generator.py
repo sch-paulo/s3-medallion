@@ -5,6 +5,17 @@ from random import choice, choices, randint, random
 fake = Faker()
 
 def generate_raw_data(num_records, num_duplicates):
+    """
+    Generate synthetic data with intentional quality issues to simulate bronze layer data.
+    
+    Parameters:
+    num_records (int): Number of unique records to generate
+    num_duplicates (int): Number of duplicate records to add to the dataset
+    
+    Returns:
+    DataFrame: Pandas DataFrame containing synthetic data with various quality issues including 
+    null values, inconsistent formatting, and duplicate records
+   """
     data = {
         'name': [fake.name() if random() > 0.03 else None for _ in range(num_records)],
         'email': [fake.email() for _ in range(num_records)],
