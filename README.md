@@ -1,4 +1,4 @@
-# Pipeline de Dados - Camadas Bronze, Silver e Gold 🏗️
+# Pipeline ETL - Upload de Camadas Bronze🥉, Silver🥈 e Gold🥇 no AWS S3🪣
 
 [![Python](https://img.shields.io/badge/python-3670A0?logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/-Pandas-333333?&logo=pandas)](https://pandas.pydata.org/)
