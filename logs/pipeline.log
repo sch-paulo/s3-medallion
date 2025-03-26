@@ -99,3 +99,41 @@
 2025-03-23 22:10:05,447 - pipelines.data_generator - INFO - Successfully generated data to data\bronze\bronze_layer_raw.csv
 2025-03-23 22:10:05,562 - pipelines.processor - INFO - Successfully cleaned data to data\silver\silver_layer_clean.parquet
 2025-03-23 22:10:05,563 - __main__ - ERROR - Gold layer creation failed: name 'aSILVER_CLEAN_FILE' is not defined
+2025-03-26 06:30:22,955 - __main__ - INFO - Initializing an ETL pipeline for data ingestion into an S3 bucket using the Medallion Architecture
+2025-03-26 06:30:23,928 - utils.s3_client - INFO - S3 client configured correctly
+2025-03-26 06:30:23,928 - pipelines.data_generator - INFO - Generating 10000 records with 120 duplicates
+2025-03-26 06:30:26,493 - pipelines.data_generator - INFO - Successfully generated data to data\bronze\bronze_layer_raw.csv
+2025-03-26 06:30:26,495 - utils.s3_client - INFO - Files listed in 'data\bronze': 
+[WindowsPath('data/bronze/bronze_layer_raw.csv')]
+2025-03-26 06:30:26,495 - utils.s3_client - INFO - Trying to upload 'bronze_layer_raw.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:27,786 - utils.s3_client - INFO - 'bronze_layer_raw.csv' was sent to the path 'bronze/bronze_layer_raw.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:27,786 - utils.s3_client - INFO - Trying to download files from 'bronze/'...
+2025-03-26 06:30:29,195 - utils.s3_client - INFO - Downloaded 'bronze/bronze_layer_raw.csv' to 'data/bronze\bronze_layer_raw.csv'
+2025-03-26 06:30:29,440 - pipelines.processor - INFO - Successfully cleaned data to data\silver\silver_layer_clean.parquet
+2025-03-26 06:30:29,440 - utils.s3_client - INFO - Files listed in 'data\silver': 
+[WindowsPath('data/silver/silver_layer_clean.parquet')]
+2025-03-26 06:30:29,440 - utils.s3_client - INFO - Trying to upload 'silver_layer_clean.parquet' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:29,878 - utils.s3_client - INFO - 'silver_layer_clean.parquet' was sent to the path 'silver/silver_layer_clean.parquet' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:29,878 - utils.s3_client - INFO - Trying to download files from 'silver/'...
+2025-03-26 06:30:30,802 - utils.s3_client - INFO - Downloaded 'silver/silver_layer_clean.parquet' to 'data/silver\silver_layer_clean.parquet'
+2025-03-26 06:30:31,100 - pipelines.aggregators - INFO - Successfully loaded 'active_users' into data\gold\active_users.csv
+2025-03-26 06:30:31,102 - pipelines.aggregators - INFO - Successfully loaded 'time_analytics' into data\gold\time_analytics.csv
+2025-03-26 06:30:31,103 - pipelines.aggregators - INFO - Successfully loaded 'demographic_analytics' into data\gold\demographic_analytics.csv
+2025-03-26 06:30:31,104 - pipelines.aggregators - INFO - Successfully loaded 'status_summary' into data\gold\status_summary.csv
+2025-03-26 06:30:31,105 - pipelines.aggregators - INFO - Successfully loaded 'yearly_growth' into data\gold\yearly_growth.csv
+2025-03-26 06:30:31,106 - pipelines.aggregators - INFO - Successfully loaded 'exec_dashboard' into data\gold\exec_dashboard.csv
+2025-03-26 06:30:31,107 - utils.s3_client - INFO - Files listed in 'data\gold': 
+[WindowsPath('data/gold/active_users.csv'), WindowsPath('data/gold/demographic_analytics.csv'), WindowsPath('data/gold/exec_dashboard.csv'), WindowsPath('data/gold/status_summary.csv'), WindowsPath('data/gold/time_analytics.csv'), WindowsPath('data/gold/yearly_growth.csv')]
+2025-03-26 06:30:31,107 - utils.s3_client - INFO - Trying to upload 'active_users.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:31,550 - utils.s3_client - INFO - 'active_users.csv' was sent to the path 'gold/active_users.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:31,551 - utils.s3_client - INFO - Trying to upload 'demographic_analytics.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:31,876 - utils.s3_client - INFO - 'demographic_analytics.csv' was sent to the path 'gold/demographic_analytics.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:31,876 - utils.s3_client - INFO - Trying to upload 'exec_dashboard.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:32,266 - utils.s3_client - INFO - 'exec_dashboard.csv' was sent to the path 'gold/exec_dashboard.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:32,266 - utils.s3_client - INFO - Trying to upload 'status_summary.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:32,582 - utils.s3_client - INFO - 'status_summary.csv' was sent to the path 'gold/status_summary.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:32,583 - utils.s3_client - INFO - Trying to upload 'time_analytics.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:32,901 - utils.s3_client - INFO - 'time_analytics.csv' was sent to the path 'gold/time_analytics.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:32,901 - utils.s3_client - INFO - Trying to upload 'yearly_growth.csv' to bucket 's3-medallion-etl'...
+2025-03-26 06:30:33,217 - utils.s3_client - INFO - 'yearly_growth.csv' was sent to the path 'gold/yearly_growth.csv' folder inside the S3 bucket 's3-medallion-etl'
+2025-03-26 06:30:33,218 - __main__ - INFO - Pipeline was executed gracefully!
