@@ -24,6 +24,6 @@ BUCKET_NAME = os.getenv('BUCKET_NAME')
 
 # Data generation parameters
 DATA_GEN_CONFIG = {
-    "default_records": 10000,
-    "default_duplicates": 120
+    "default_records": 100000,
+    "default_duplicates": 5000
 }
