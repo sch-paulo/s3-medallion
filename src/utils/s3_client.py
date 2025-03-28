@@ -79,7 +79,7 @@ class S3Client:
                 raise
 
     def download_files_from_s3(self, s3_prefix: str, local_dir: str) -> None:
-        """
+        '''
         Download files from an S3 bucket matching a prefix to a local directory.
     
         Recursively downloads all objects under the specified prefix while preserving 
@@ -91,7 +91,7 @@ class S3Client:
         
         Returns:
         None: The function saves files locally but doesn't return a value
-        """
+        '''
         try:
             logger.info(f"Trying to download files from '{s3_prefix}'...")
             Path(local_dir).mkdir(parents=True, exist_ok=True)
@@ -127,6 +127,6 @@ if __name__ == '__main__':
     # files = s3_client.list_files(Path('data/bronze'))
     # s3_client.upload_files_to_s3(files, 'bronze')
     s3_client.download_files_from_s3(
-        s3_prefix='bronze/',  # The S3 folder to download from
-        local_dir='data/bronze'  # Local directory to save files
+        s3_prefix='bronze/',
+        local_dir='data/bronze'  
     )
